@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=480" />
+    <title>Mighty Bliss</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/lt_landing_valid_form.js"></script>
+    <script type="text/javascript" src="js/lt_landing_script.js"></script>
+    <script type="text/javascript">
+      $jsonData = {
+        RU: {
+          currency: "\u20ac",
+          productsum: 39,
+          oldproductsum: 130,
+          delivery: 0,
+          totalsum: "1990",
+        },
+      };
+    </script>
+
+    <style>
+      .ajax_loader {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="s1">
+        <div class="s1-title">
+          <div class="s1-suptitle">Одеяло с подогревом</div>
+          <h1>Mighty Bliss</h1>
+        </div>
+
+        <div class="s1-block-1">
+          Для <span class="color-orange">любой</span> части тела!
+        </div>
+
+        <div class="s1-list">
+          <div class="s1-list-item">
+            <img src="img/s1-1.png" alt="" />
+            <p>Моментально снимает усталость и напряжение</p>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/s1-2.png" alt="" />
+            <p>Облегчает боль в мышцах и суставах</p>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/s1-3.png" alt="" />
+            <p>Положительный эффект после первого применения!</p>
+          </div>
+        </div>
+
+        <div class="discount">
+          <p class="discount-text"><span>-50% </span>SALE</p>
+        </div>
+
+        <div class="container">
+          <div class="form-wrapper">
+            <h3>
+              <span class="color-orange">50% СКИДКА</span> <br />
+              по промокоду <u>«health2021»</u>
+            </h3>
+            <div class="timer">
+              <div class="timer-title">До конца акции:</div>
+              <div class="countbox"></div>
+              <div class="timer-body">
+                <div class="timer-item">
+                  <div class="timer-val">
+                    <div class="timer-num">0</div>
+                    <div class="timer-num">0</div>
+                  </div>
+                  <div class="timer-name">ч</div>
+                </div>
+                <div class="timer-separate"></div>
+                <div class="timer-item">
+                  <div class="timer-val">
+                    <div class="timer-num">0</div>
+                    <div class="timer-num">0</div>
+                  </div>
+                  <div class="timer-name">м</div>
+                </div>
+                <div class="timer-separate"></div>
+                <div class="timer-item">
+                  <div class="timer-val">
+                    <div class="timer-num">0</div>
+                    <div class="timer-num">0</div>
+                  </div>
+                  <div class="timer-name">с</div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <!--Container-->
+
+              <form method="post">
+                <div class="form-item">
+                  <select
+                    name="country"
+                    class="countryselect form-control location"
+                  >
+                    <option selected value="RU">Россия</option>
+                    <option selected value="RU">Выберите вашу страну</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <input
+                    type="text"
+                    name="name"
+                    class="field form-control userneme"
+                    placeholder="Введите ваше имя"
+                    value=""
+                  />
+                </div>
+                <div class="form-item">
+                  <input
+                    type="text"
+                    name="phone"
+                    class="field form-control phone"
+                    placeholder="Введите ваш телефон"
+                    value=""
+                  />
+                </div>
+
+                <div class="price">
+                  <div class="price-old">
+                    <div>Cтандартная цена:</div>
+                    <span class="price-old-val oldproductsum"><s></s></span>
+                  </div>
+
+                  <div class="price-new">
+                    <div>Цена со скидкой:</div>
+                    <span class="price-new-val productsum color-blue"></span>
+                  </div>
+                </div>
+                <input
+                  type="hidden"
+                  name="productsum"
+                  class="productsum"
+                  value="1 руб."
+                />
+                <input type="hidden" name="delivery" value="0 руб." />
+                <input
+                  type="hidden"
+                  name="totalsum"
+                  class="productsum"
+                  value="1 руб."
+                />
+                <input type="hidden" name="user" value="1" />
+                <input
+                  type="hidden"
+                  name="address"
+                  value="Уточнить у покупателя"
+                />
+
+                <div class="reolader form-item">
+                  <button
+                    type="submit"
+                    class="form-btn mm_button"
+                    onclick="checkFields(event, this);"
+                  >
+                    Заказать сейчас
+                  </button>
+                  <div class="ajax_loader_block">
+                    <img
+                      class="ajax_loader"
+                      src="img/ajax-loader.gif"
+                      alt="Идет отправка данных"
+                    />
+                    <span class="ajax_loader">Идет отправка данных</span>
+                  </div>
+                </div>
+                <div class="form-count">
+                  *количество товара по акции ограниченно!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s2">
+        <h2>
+          <span class="color-orange">Почему покупатели</span><br />
+          в восторге от Mighty Bliss?
+        </h2>
+        <div class="container">
+          <div class="s2-item">
+            <div class="s2-item-list">
+              <img src="img/s2-1.png" alt="" />
+              <div class="s2-item-block">
+                <div class="s2-item-title">Полное снятие боли</div>
+                <div class="s2-item-text">
+                  Вы забудете о мышечной боли, судорогах, послеоперационном
+                  дискомфорте или любой другой форме боли.
+                </div>
+              </div>
+            </div>
+            <div class="s2-item-list">
+              <img src="img/s2-2.png" alt="" />
+              <div class="s2-item-block">
+                <div class="s2-item-title">Улучшение сна и самочувствия</div>
+                <div class="s2-item-text">
+                  Одеяло мгновенно расслабит ваши мышцы, нормализует
+                  кровообращение и успокоит нервную систему.
+                </div>
+              </div>
+            </div>
+            <div class="s2-item-list">
+              <img src="img/s2-3.png" alt="" />
+              <div class="s2-item-block">
+                <div class="s2-item-title">Удовольствие от использования</div>
+                <div class="s2-item-text">
+                  Волокна микроплюша обеспечивают приятное уютное ощущение при
+                  соприкосновении с кожей.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="s2-footer">
+            <div class="s2-footer-block">
+              <span class="color-orange"> Mighty Bliss</span> быстро приведет
+              ваши мышцы в порядок, позволит расслабиться после тяжелого
+              трудового дня. Нормализует кровообращение и подготовит тело ко
+              сну!
+            </div>
+          </div>
+          <a href="#form" class="form-btn mm_button"> Сделать заказ </a>
+        </div>
+        <img class="gif" src="gif/1.gif" alt="" />
+      </section>
+
+      <section class="s3">
+        <div class="container">
+          <h2>
+            <span class="color-orange"> Подходит для всех </span>
+            участков тела!
+          </h2>
+        </div>
+        <div class="container">
+          <div class="s3-item">
+            <div class="s3-item-top">
+              Благодаря функции инфракрасного подогрева, Mighty Bliss
+              способствует снятию мышечной усталости и напряжения, а также
+              снятию болей на всех участках тела:
+            </div>
+          </div>
+        </div>
+        <div class="s3-list">
+          <div class="s3-list-item">
+            <img src="img/s3-1.png" alt="" />
+            <p>Шея</p>
+          </div>
+          <div class="s3-list-item">
+            <img src="img/s3-2.png" alt="" />
+            <p>Живот</p>
+          </div>
+          <div class="s3-list-item">
+            <img src="img/s3-3.png" alt="" />
+            <p>Ноги</p>
+          </div>
+          <div class="s3-list-item">
+            <img src="img/s3-4.png" alt="" />
+            <p>Руки</p>
+          </div>
+          <div class="s3-list-item">
+            <img src="img/s3-5.png" alt="" />
+            <p>Плечи</p>
+          </div>
+          <div class="s3-list-item">
+            <img src="img/s3-6.png" alt="" />
+            <p>Поясница</p>
+          </div>
+          <div class="s3-list-item">
+            <img src="img/s3-7.png" alt="" />
+            <p>Спина</p>
+          </div>
+        </div>
+        <div class="container">
+          <a href="#form" class="form-btn mm_button"> Сделать заказ </a>
+        </div>
+      </section>
+
+      <section class="s4">
+        <div class="video">
+          <div class="click-for-video">
+            <h2>Смотрите видео!</h2>
+            <img src="img/s4.jpg" alt="" />
+          </div>
+          <div class="youtube">
+            <iframe class="youtube"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="s5">
+        <h2>
+          <span class="color-orange"> Заменяет дорогостоящие </span> сеансы
+          физиотерапии!
+        </h2>
+        <div class="container">
+          <div class="s5-item">
+            <div class="s5-item-list">
+              <img src="img/s5.png" alt="" />
+              <div class="s5-item-block">
+                <div class="s5-item-title">Полное снятие боли</div>
+                <div class="s5-item-text">
+                  Благодаря трем режимам тепла, быстрому нагреву и возможности
+                  мочить грелку водой, она способна заменить полноценные
+                  физиопроцедуры!
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="list">
+            <li>Помогает при простуде, бронхите, пневмонии</li>
+            <li>Избавляет от остеохондроза</li>
+            <li>Избавляет от болей в суставах</li>
+            <li>Эффективно расслабляет мышцы и снимает спазмы</li>
+            <li>Снимает отечность</li>
+          </ul>
+        </div>
+        <img class="s5-img" src="img/s5-bg.jpg" alt="" />
+      </section>
+
+      <section class="s6">
+        <h2>
+          <span class="color-orange"> Какие еще проблемы </span>
+          решает Mighty Bliss?
+        </h2>
+        <div class="container">
+          <div class="s6-item">
+            <div class="s6-item-list">
+              <img src="img/s6-1.png" alt="" />
+              <p>Восстанавливает мышцы</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-2.png" alt="" />
+              <p>Улучшает сон и самочувствие</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-3.png" alt="" />
+              <p>Снимает усталость и напряжение</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-4.png" alt="" />
+              <p>Благотворно влияет на нервную систему</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-5.png" alt="" />
+              <p>Купирует головную боль и приступы мигрени</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-6.png" alt="" />
+              <p>Улучшает циркуляцию крови и лимфы</p>
+            </div>
+          </div>
+          <div class="s6-footer">
+            <img src="img/s6-footer.jpg" alt="" />
+            <p>
+              Одеяло Mighty Bliss можно легко брать с собой, ведь оно весит
+              всего 600гр и может складываться в несколько раз!
+            </p>
+          </div>
+
+          <a href="#form" class="form-btn mm_button"> Сделать заказ </a>
+        </div>
+
+        <img class="s6-img" src="img/s6-footer-2.jpg" alt="" />
+      </section>
+
+      <section class="s7">
+        <div class="container">
+          <h2>
+            <span class="color-orange">Кому подойдет </span><br />
+            Mighty Bliss?
+          </h2>
+
+          <div class="s7-item">
+            <div class="s7-item-list">
+              <img src="img/s7-1.png" alt="" />
+              <p>Спортсменам</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-2.png" alt="" />
+              <p>Молодым людям</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-3.png" alt="" />
+              <p>Людям в возрасте</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-4.png" alt="" />
+              <p>Людям с сидячей работой</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-5.png" alt="" />
+              <p>Людям с нервной работой</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-6.png" alt="" />
+              <p>Людям со старыми травмами</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-7.png" alt="" />
+              <p>Людям с тяжелой физической работой</p>
+            </div>
+            <div class="s7-item-list">
+              <img src="img/s7-8.png" alt="" />
+              <p>Всем, кто ценит комфорт и жизнь без боли</p>
+            </div>
+          </div>
+          <a href="#form" class="form-btn mm_button"> Сделать заказ </a>
+        </div>
+      </section>
+
+      <section class="s8">
+        <p>
+          А еще, одеяло <span class="color-orange">Mighty Bliss</span> очень
+          любят домашние животные!
+        </p>
+      </section>
+
+      <section class="s9">
+        <div class="container">
+          <h2>
+            <span class="color-orange"> Технические </span>
+            характеристики
+          </h2>
+          <div class="s9-item">
+            <img class="s9-img" src="img/s9.png" alt="" />
+          </div>
+        </div>
+        <div class="s9-list">
+          <table cellpadding="5">
+            <tr>
+              <td colspan="2"><b>Размер изделия: </b> 30х60 см</td>
+            </tr>
+            <tr>
+              <td colspan="2"><b> Вес: </b> 600 г</td>
+            </tr>
+            <tr>
+              <td colspan="2"><b> Обогрев: </b> 3 режима</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <b> Целевые области: </b>
+                <span
+                  >плечи, шея, спина, поясница, <br />живот, руки, ноги</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b> Стирка в стиральной машине: </b> да</td>
+            </tr>
+            <tr>
+              <td colspan="2"><b> Пульт управления:</b>да</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="s10">
+        <div class="s10-text-block">
+          Мы уверены в качестве, поэтому
+          <b>на одеяло Mighty Bliss действует пожизненная гарантия!</b>
+        </div>
+        <img class="s10-img" src="img/s10-bg.jpg" alt="" />
+        <div class="s10-text">
+          <p>
+            К сожалению,<span class="color-orange">
+              в связи с высоким спросом,</span
+            >
+            мы вынуждены ввести ограничение:
+          </p>
+          <p class="s10-text-fix">не более 2 штук в 1 руки!</p>
+        </div>
+
+        <div class="container">
+          <a href="#form" class="form-btn mm_button"> Сделать заказ </a>
+          <div class="form-count">
+            *количество товара по акции <b>ограниченно!</b>
+          </div>
+        </div>
+
+        <img class="s10-gif" src="gif/2.gif" alt="" />
+      </section>
+
+      <section class="s12">
+        <div class="container">
+          <h2>
+            Отзывы наших
+            <span class="color-orange"> покупателей </span>
+          </h2>
+
+          <div class="s12__slider">
+            <div class="s12-block white-block">
+              <div class="block-name">
+                <img src="img/s12-photo-1.png" alt="" />
+                <p class="name"><b>Gretta</b><br /><span>38 лет, CША</span></p>
+                <img src="img/icon-chat.png" alt="" />
+              </div>
+
+              <p class="s12-text">
+                Мы с мужем часто ездим на горнолыжные курорты. Вы бы знали, как
+                приятно порой придти со склона и согреть уставшие мышцы одеялом
+                Mighty Bliss. Усталость сразу уходит, наполняет ощущение
+                комфорта и тепла. Я пользуюсь ей и в повседневной жизни. Часто
+                кладу на стул на работе. А еще наши кошки очень любят на ней
+                спать. Удачное приобретение. Рекомендую!
+              </p>
+              <img src="img/s12-1.jpg" alt="" />
+            </div>
+
+            <div class="s12-block white-block">
+              <div class="block-name">
+                <img src="img/s12-photo-2.png" alt="" />
+                <p class="name">
+                  <b>John</b><br /><span>28 лет, Австралия</span>
+                </p>
+                <img src="img/icon-chat.png" alt="" />
+              </div>
+
+              <p class="s12-text">
+                Профессионально занимаюсь тяжелой атлетикой. Перед важными
+                соревнованиями интенсивность тренировок возрастает. С ними
+                появляется и дискомфорт в мышцах, судороги по ночам. С Mighty
+                Bliss я чувствую себя значительно лучше. А также сокращается
+                время восстановления. Большое спасибо!
+              </p>
+              <img src="img/s12-2.jpg" alt="" />
+            </div>
+
+            <div class="s12-block white-block">
+              <div class="block-name">
+                <img src="img/s12-photo-3.png" alt="" />
+                <p class="name">
+                  <b>Marie</b><br /><span>35 лет, Португалия</span>
+                </p>
+                <img src="img/icon-chat.png" alt="" />
+              </div>
+
+              <p class="s12-text">
+                В юности занималась художественной гимнастикой. Множественные
+                травмы и растяжения с возрастом дали о себе знать. Часто ломит
+                колени, поясницу. Пробовала разные грелки, но Mighty Bliss
+                порадовала больше всего. Очень удобная, компактная, быстро
+                нагревается. Пользуюсь и дома, и на работе. Стала чувствовать
+                себя гораздо лучше, про боли почти забыла. Смело рекомендую!
+              </p>
+              <img src="img/s12-3.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s13">
+        <div class="container">
+          <h2>
+            Как сделать
+            <span class="color-orange">заказ?</span>
+          </h2>
+
+          <div class="s13-item">
+            <div class="s13-item-list">
+              <div class="s13-img"><img src="img/s13-1.png" alt="" /></div>
+
+              <p>
+                <span>Заявка</span><br />
+
+                Оставьте заявку на нашем сайте, заполнив форму заказа
+              </p>
+            </div>
+
+            <div class="s13-item-list">
+              <div class="s13-img"><img src="img/s13-2.png" alt="" /></div>
+              <p>
+                <span>Подтверждение</span><br />
+
+                Наш менеджер перезвонит вам для уточнения деталей и мы отправим
+                ваш товар
+              </p>
+            </div>
+
+            <div class="s13-item-list">
+              <div class="s13-img"><img src="img/s13-3.png" alt="" /></div>
+              <p>
+                <span>Получение</span><br />
+
+                Оплатите вашу посылку при получении на почте или у курьера
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s1">
+        <div class="s1-title">
+          <div class="s1-suptitle">Одеяло с подогревом</div>
+          <h1>Mighty Bliss</h1>
+        </div>
+
+        <div class="s1-block-1">
+          Для <span class="color-orange">любой</span> части тела!
+        </div>
+
+        <div class="s1-list">
+          <div class="s1-list-item">
+            <img src="img/s1-1.png" alt="" />
+            <p>Моментально снимает усталость и напряжение</p>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/s1-2.png" alt="" />
+            <p>Облегчает боль в мышцах и суставах</p>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/s1-3.png" alt="" />
+            <p>Положительный эффект после первого применения!</p>
+          </div>
+        </div>
+
+        <div class="discount">
+          <p class="discount-text"><span>-50% </span>SALE</p>
+        </div>
+
+        <div class="container">
+          <div class="form-wrapper">
+            <h3>
+              <span class="color-orange">50% СКИДКА</span> <br />
+              по промокоду <u>«health2021»</u>
+            </h3>
+            <div class="timer">
+              <div class="timer-title">До конца акции:</div>
+              <div class="countbox"></div>
+              <div class="timer-body">
+                <div class="timer-item">
+                  <div class="timer-val">
+                    <div class="timer-num">0</div>
+                    <div class="timer-num">0</div>
+                  </div>
+                  <div class="timer-name">ч</div>
+                </div>
+                <div class="timer-separate"></div>
+                <div class="timer-item">
+                  <div class="timer-val">
+                    <div class="timer-num">0</div>
+                    <div class="timer-num">0</div>
+                  </div>
+                  <div class="timer-name">м</div>
+                </div>
+                <div class="timer-separate"></div>
+                <div class="timer-item">
+                  <div class="timer-val">
+                    <div class="timer-num">0</div>
+                    <div class="timer-num">0</div>
+                  </div>
+                  <div class="timer-name">с</div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <!--Container-->
+
+              <form method="post" id="form">
+                <div class="form-item">
+                  <select
+                    name="country"
+                    class="countryselect form-control location"
+                  >
+                    <option selected value="RU">Россия</option>
+                    <option selected value="RU">Выберите вашу страну</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <input
+                    type="text"
+                    name="name"
+                    class="field form-control userneme"
+                    placeholder="Введите ваше имя"
+                    value=""
+                  />
+                </div>
+                <div class="form-item">
+                  <input
+                    type="text"
+                    name="phone"
+                    class="field form-control phone"
+                    placeholder="Введите ваш телефон"
+                    value=""
+                  />
+                </div>
+
+                <div class="price">
+                  <div class="price-old">
+                    <div>Cтандартная цена:</div>
+                    <span class="price-old-val oldproductsum"><s></s></span>
+                  </div>
+
+                  <div class="price-new">
+                    <div>Цена со скидкой:</div>
+                    <span class="price-new-val productsum color-blue"></span>
+                  </div>
+                </div>
+                <input
+                  type="hidden"
+                  name="productsum"
+                  class="productsum"
+                  value="1 руб."
+                />
+                <input type="hidden" name="delivery" value="0 руб." />
+                <input
+                  type="hidden"
+                  name="totalsum"
+                  class="productsum"
+                  value="1 руб."
+                />
+                <input type="hidden" name="user" value="1" />
+                <input
+                  type="hidden"
+                  name="address"
+                  value="Уточнить у покупателя"
+                />
+
+                <div class="reolader form-item">
+                  <button
+                    type="submit"
+                    class="form-btn mm_button"
+                    onclick="checkFields(event, this);"
+                  >
+                    Заказать сейчас
+                  </button>
+                  <div class="ajax_loader_block">
+                    <img
+                      class="ajax_loader"
+                      src="img/ajax-loader.gif"
+                      alt="Идет отправка данных"
+                    />
+                    <span class="ajax_loader">Идет отправка данных</span>
+                  </div>
+                </div>
+                <div class="form-count">
+                  *количество товара по акции ограниченно!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      $(function () {
+        CountBox();
+        $(".slider-arrows").html("");
+
+        $("a[href^='#']").click(function () {
+          var _href = $(this).attr("href");
+          $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+
+          return false;
+        });
+
+        $(".s12__slider").slick({
+          dots: true,
+          dotsClass: "header-dots",
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          prevArrow:
+            '<img class="slider-s12_left" <img src="img/icon-arrow-left.png" alt="">',
+          nextArrow:
+            '<img class="slider-s12_right" src="img/icon-arrow-right.png" alt="">',
+        });
+
+        $(".click-for-video").click(function () {
+          this.style.display = "none";
+          $("div.youtube").css("display", "block");
+          $("iframe.youtube").prop("src", "video.mp4");
+        });
+      });
+    </script>
+  </body>
+</html>
